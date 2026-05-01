@@ -753,10 +753,23 @@ section {
   transition: background 0.2s;
 }
 
-/* ─── FOOTER – all text gold, except subtle elements ─── */
+/* ========== FOOTER – compact & gold ========== */
+footer {
+  background: #050505;
+  border-top: 1px solid rgba(201, 168, 76, 0.25);
+  padding: 32px 40px 24px;   /* reduced top/bottom padding */
+}
+
+.light-theme footer {
+  background: #1a1a1a;
+  border-top-color: rgba(201, 168, 76, 0.4);
+}
+
+/* All footer text gold */
 footer,
 footer p,
 footer a,
+footer span,
 footer .nav-logo,
 footer .footer-links a,
 footer .footer-hours p,
@@ -766,23 +779,99 @@ footer .footer-social a {
   color: var(--gold) !important;
 }
 
-/* Keep footer headings gold + maybe slight dim */
 footer h4 {
-  color: var(--gold-light);
+  color: var(--gold-light) !important;
   letter-spacing: 0.1em;
+  margin-bottom: 12px;      /* reduced spacing */
+  font-size: 0.85rem;
 }
 
-/* Footer brand logo – keep gold accent */
 .footer-brand .nav-logo span {
-  color: var(--gold-light);
+  color: var(--gold-light) !important;
 }
 
-/* Bottom copyright line slightly softer gold */
+/* Tighter footer top layout */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;                /* smaller gap between columns */
+  margin-bottom: 20px;      /* less bottom margin */
+}
+
+.footer-brand {
+  max-width: 240px;
+}
+
+.footer-brand .nav-logo {
+  font-size: 1.4rem;        /* slightly smaller logo */
+  margin-bottom: 6px;
+}
+
+.footer-brand p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.footer-links ul,
+.footer-hours p {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;       /* tighter list */
+}
+
+.footer-links a,
+.footer-hours p {
+  font-size: 0.8rem;
+}
+
+.footer-hours p {
+  line-height: 1.5;
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+/* Hover effects */
+footer a:hover,
+.footer-links a:hover,
+.footer-bottom a:hover,
+.footer-social a:hover {
+  color: var(--gold-light) !important;
+  text-decoration: underline;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+  padding-top: 16px;        /* reduced */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.75rem;
+}
+
 .footer-bottom p {
-  opacity: 0.85;
+  opacity: 0.9;
+  margin: 0;
+
 }
 
-/* floating whatsapp */
+/* ========== FLOATING WHATSAPP BUTTON (unchanged, but included for completeness) ========== */
 .wa-fab {
   position: fixed;
   bottom: 32px;
@@ -815,6 +904,9 @@ footer h4 {
   opacity: 0;
   transition: opacity 0.2s;
   font-size: 0.8rem;
+  color: var(--white);
+  border-radius: 4px;
+  pointer-events: none;
 }
 
 .wa-fab:hover .wa-tooltip {
