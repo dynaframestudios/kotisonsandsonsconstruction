@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Sitemap: https://kotisonsandsonsconstruction.co.za/sitemap.xml
+
+# Disallow admin or private folders (if any)
+Disallow: /assets/private/
+Disallow: /tmp/
+
+# Crawl delay (optional, good for shared hosting)
+Crawl-delay: 2
